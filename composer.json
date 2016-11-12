@@ -1,0 +1,13 @@
+{
+    "name": "lishuo/simple-excel",
+    "description": "Fast and simple Excel tools",
+    "type": "libary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lishuo",
+            "email": "letwhip@gmail.com"
+        }
+    ],
+    "require": {}
+}
