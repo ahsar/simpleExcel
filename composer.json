@@ -15,7 +15,7 @@
     "autoload": {
         "psr-4": {
             "Simple\\Excel\\": "classes/",
-            "Simple\\Excel\\Tests": "tests/"
+            "Simple\\Excel\\Tests\\": "tests/"
         }
     }
 }
