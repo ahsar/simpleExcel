@@ -9,5 +9,13 @@
             "email": "letwhip@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "phpoffice/phpexcel": "^1.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "Simple\\Excel\\": "classes/",
+            "Simple\\Excel\\Tests": "tests/"
+        }
+    }
 }
