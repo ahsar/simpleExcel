@@ -20,9 +20,32 @@ class Output
      */
     private $extName = [];
 
+    /**
+     * title 
+     * 
+     * worksheetName
+     * @var string
+     * @access private
+     */
+    private $title = 'worksheet';
+
     public function __construct()
     {
         $this->extName = ['xls', 'xlsx'];
+    }
+
+    /**
+     * setWorkSheet 
+     * 
+     * 设置工作簿名称
+     * @access public
+     * @return void
+     */
+    public function setTitle($name)
+    {
+        if (is_string($name)) {
+            $this->title = $name;
+        }
     }
 
     /**
@@ -56,7 +79,7 @@ class Output
      * @access public
      * @return void
      */
-    public function doExport($data, $sheetName = '工组薄', $title = '报表输出结果', $extName = 'xlsx')
+    public function doExport($data, $sheetName = '工组薄', $extName = 'xlsx')
     {
         // 将输出文件格式锁定在正确格式中
         if (!in_array($extName, $this->extName)){
@@ -116,7 +139,7 @@ class Output
             }
         }
 
-        $outputFileName = $title . '.' . $outputFileType;
+        $outputFileName = $this->title . '.' . $outputFileType;
         header("Content-Type: application/force-download");
         header("Content-Type: application/octet-stream");
         header("Content-Type: application/download");
