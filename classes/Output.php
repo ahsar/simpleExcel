@@ -67,12 +67,12 @@ class Output
         $data['title'] || $data['title']['A'] = '';
         $data['data'] || $data['data'][0] = (int) 0;
 
-        $objExcel = new PHPExcel();
+        $objExcel = new \PHPExcel();
 
         if ($outputFileType == 'xls') {
-            $objWriter = new PHPExcel_Writer_Excel5($objExcel);
+            $objWriter = new \PHPExcel_Writer_Excel5($objExcel);
         } else {
-            $objWriter = new PHPExcel_Writer_Excel2007($objExcel);
+            $objWriter = new \PHPExcel_Writer_Excel2007($objExcel);
         }
 
         $objProps = $objExcel->getProperties();
@@ -109,7 +109,7 @@ class Output
         // 存在更多sheet
         if ($data['newSheet']) {
             foreach ($data['newSheet'] as $key => $val) {
-                $myWorkSheet = new PHPExcel_Worksheet($objExcel, $val['sheetName']);
+                $myWorkSheet = new \PHPExcel_Worksheet($objExcel, $val['sheetName']);
                 $objExcel->addSheet($myWorkSheet, $key);
                 $objExcel->setActiveSheetIndex($key);
                 $objExcel->getActiveSheet()->fromArray($val['data'], $val['filter'], 'A1');
